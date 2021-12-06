@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <title>Movie Project</title>
+</head>
+
+<body>
+
+
+
+
+    <header class="mb-3  border-bottom sticky-top bg-warning navbar">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center w-100 justify-content-lg-start">
+
+                <a href="/" class="d-flex align-items-center mb-2 px-3 mb-lg-0  text-decoration-none">
+                    <img src="img/logo.png" height="45px" alt="">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle link-dark" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Filmler</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Popüler</a></li>
+                            <li><a class="dropdown-item" href="#">Gösterimdekiler</a></li>
+                            <li><a class="dropdown-item" href="#">Yakında</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-2 link-dark" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Diziler</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Popüler</a></li>
+                            <li><a class="dropdown-item" href="#">Gösterimdekiler</a></li>
+                            <li><a class="dropdown-item" href="#">Yakında</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Haber</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Keşfet</a></li>
+                </ul>
+
+
+
+                <form class="col-12 col-lg-4 mb-3 w-50-l mb-lg-0 me-lg-3">
+                    <div class="input-group">
+                        <input type="search" class="form-control btn-outline-light"
+                            placeholder="Bir film ya da sanatçı arayın..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="button" id="button-addon2"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </form>
+				
+				
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+
+
+
+        <!-- //////////////////MANŞET GALERİ////////////////////////// -->
+
+
+
+
+        <div id="carouselExampleCaptions" class="carousel slide my-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner justify-content-center">
+
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img src="img/_1.jpg" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="#" class="text-decoration-none text-white">
+                            <h5>Red Notice</h5>
+                        </a>
+                        <p>PG-13 | Aksiyon, Komedi, Suç, Gerilim | 1h 57m</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="img/_2.jpg" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="#" class="text-decoration-none text-white">
+                            <h5>Peeky Blinder</h5>
+                        </a>
+                        <p>NC-17 | Suç, Dram | 1h</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="img/_3.jpg" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="#" class="text-decoration-none text-white">
+                            <h5>La Casa De Papel</h5>
+                        </a>
+                        <p>R | Suç, Dram | 1h 10m</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="img/_4.jpg" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="#" class="text-decoration-none text-white">
+                            <h5>Dune: Çöl Gezegeni (2021)</h5>
+                        </a>
+                        <p>PG-13 | Bilim-Kurgu, Macera | 2h 35m</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="img/_5.jpg" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="#" class="text-decoration-none text-white">
+                            <h5>The Matrix Resurrections (2021)</h5>
+                        </a>
+                        <p>R | Aksiyon, Bilim-Kurgu | 2h 28m</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="img/_7.jpg" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="#" class="text-decoration-none text-white">
+                            <h5>Ava (2020)</h5>
+                        </a>
+                        <p>R | Aksiyon, Suç, Dram, Gerilim | 1h 36m</p>
+                    </div>
+                </div>
+                <div style="position: absolute; z-index: 1; bottom: 0px; height: 120px;"
+                    class="bg-light w-100 bg-opacity-25 justify-content-center"></div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
+
+
+        <!-- ///////////////////VİZYONDAKİLER BARI////////////////// -->
+
+
+        
+
+        <section class="container border-bottom display-4 mb-3">Vizyondakiler</section>
+   
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/_B1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ölmek İçin Zaman Yok (2021)</h5>
+                        <p class="card-text">James Bond aktif hizmetten ayrılmıştır ama yaşadığı huzur kısa ömürlü
+                            olacaktır. Çünkü CIA'den eski bir arkadaşı olan Felix Leiter ortaya çıkarak yardım isteyecek
+                            ve Bond'u tehlikeli yeni teknolojilerle donanmış gizemli bir kötü adamın izini sürmeye ikna
+                            edecektir.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100">Film Detayları</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/_B2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Orman Macerası (2021)</h5>
+                        <p class="card-text">Disneyland'de yer alan aynı isimli tema parkından sinemaya uyarlanan Jungle
+                            Cruise, bir nehir gemisi kaptanı olan Frank ile sonsuz şifa kudretine sahip Hayat Ağacı'nı
+                            aramakta olan bilim insanı Lily'nin, vahşi yaşamdan doğaüstü varlıklara pek çok zorluklarla
+                            karşılaştıkları macerayı anlatıyor.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100">Film Detayları</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/_B3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Yarının Savaşı (2021)</h5>
+                        <p class="card-text">İşgal altında bulunan dünyada insanlar, uzaylılara karşı verdikleri savaşta
+                            büyük bir yenilgiye uğrar. Artık değişen düzende yaşayan bilim insanları, sistemi
+                            değiştirmek için asker yetiştirmeye karar verir. Savaşa hazırlanmak için yeni bir yol
+                            keşfeden bilim insanları tarafından yetiştirilen askerlerin vereceği savaş, insanlığın
+                            geleceğini belirleyecektir.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100">Film Detayları</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- /////////////////////// ÖNE ÇIKANLAR ////////////////////////// -->
+    
+
+
+
+        <section class="container border-bottom display-4 mb-3">Öne Çıkanlar</section>
+   
+        <div class="row row-cols-1 row-cols-lg-6 row-cols-md-4 row-cols-sm-3 mb-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/57AIZGL3flQk4pGf0Ih5MKNcEC7.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/6AdXwFTRTAzggD2QUTt5B7JFGKL.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/a6balsDWCFMHPaPT6rFoBpNjR6z.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/aO1PCAvoYWMq5U3VBfhGbqxjwIe.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/chTkFGToW5bsyw3hgLAe4S5Gt3.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/jKuDyqx7jrjiR9cDzB5pxzhJAdv.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/kWehgvKLoJECYnpYUbKGsaN0POo.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/kXWDfaKuw7dIdTDH7rK3BWoAZ53.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/oP4zj8B2xJWLjeWwN9N9DQdFvdo.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/ssApiPZ0O0U7IHPJ306i29Ejcuw.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/zI55RLElxhH9srRWsQ1eQqcRs2U.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <a href="#">
+                        <img src="img/5qMupAz4A9EN5Rutrkmov45mNXZ.jpg" class="card-img" alt="...">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true"><i class="bi bi-chevron-left text-dark"></i></span>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
+                <li class="page-item"><a class="page-link text-dark">...</a></li>
+                <li class="page-item"><a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true"><i class="bi bi-chevron-right text-dark"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <!-- ////////////////////////// YORUMLAR /////////////////////////// -->
+
+
+
+
+
+        
+
+        <section class="container border-bottom display-4 mb-3">Yorumlar</section>
+   
+       <div class="row">
+           <div class="list-group col">
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="pic1.png" height="32px" alt="">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                            <h6 class="mb-0">Taşıyıcı: Son Hız</h6>
+                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <small class="opacity-50 text-nowrap">now</small>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="pic2.png" height="32px" alt="">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                            <h6 class="mb-0">Sensiz Olmaz</h6>
+                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem earum mollitia nisi? Lorem, ipsum dolor.</p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">3d</small>
+                        </div>
+                    </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="pic7.png" height="32px" alt="">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                            <h6 class="mb-0">Koruyucu</h6>
+                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora fuga omnis inventore? Quam perferendis sint quo odio.</p>
+                        </div>
+                        <small class="opacity-50 text-nowrap">1w</small>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="list-group mb-4 col">
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="pic4.png" height="32px" alt="">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                            <h6 class="mb-0">Yukarıdaki Tehlike 3</h6>
+                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur elit. Tempora saepe ullam delectus aliquid modi. Perspiciatis, molestiae.
+
+                            </p>
+                        </div>
+                        <small class="opacity-50 text-nowrap">now</small>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="pic5.png" height="32px" alt="">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                            <h6 class="mb-0">Kaçış Planı</h6>
+                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nam suscipit tenetur laboriosam.</p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">3d</small>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="pic6.png" height="32px" alt="">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                            <h6 class="mb-0">Patron Seviyesi</h6>
+                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quos voluptate voluptatum officiis saepe.
+
+                            </p>
+                        </div>
+                        <small class="opacity-50 text-nowrap">1w</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--//////////////////////// FOOTER //////////////////////////-->
+
+
+
+
+
+    <footer class="py-3 border-top bg-light ">
+        <div class="container justify-content-center">
+
+            <div class="row">
+
+                <div class="col-5">
+                    <form class="row g-3">
+                        <div class="">
+                            <label for="exampleFormControlInput1" class="form-label">Email adresiniz</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+
+
+                        <div class="">
+                            <label for="exampleFormControlTextarea1" class="form-label">Görüşleriniz</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                        </div>
+
+                        <div class="">
+                            <label for="exampleFormControlTextarea1" class="form-label pe-2">Puan</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                    value="option3">
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                                    value="option4">
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
+                                    value="option5">
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Gönder</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="reset" class="btn btn-light mb-3">Temizle</button>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="col-1"></div>
+
+                <div class="col-2">
+                    <h5>Destek</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TMDB Hakkında</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bize Ulaşın</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Destek Forumları</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                    <h5>Topluluk</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Rehberler</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Tartışmalar</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Öne Çıkanlar</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                    <h5>Hakkımızda</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Destek</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">İletişim</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Yardım</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sözleşme</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="border-top bg-warning">
+        <div class="container d-flex justify-content-between pt-2 pb-3">
+
+            <p>© 2021 Company, Inc. All rights reserved.</p>
+            <img src="img/logo.png" height="25px" alt="">
+            <ul class="list-unstyled d-flex align-items-start" style="margin-top: -5px;">
+                <li class="ms-3">
+                    <a class="link-dark" href="#">
+                        <i class="bi-twitter" style="font-size: 1.5rem;"></i></a>
+                </li>
+                <li class="ms-3">
+                    <a class="link-dark" href="#">
+                        <i class="bi-instagram" style="font-size: 1.5rem;"></i>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="link-dark" href="#">
+                        <i class="bi-facebook" style="font-size: 1.5rem;"></i>
+                    </a>
+                </li>            
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+</html>
