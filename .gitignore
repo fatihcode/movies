@@ -1,3 +1,33 @@
-.DS_Store
+# Archive
+*.zip
+*.7z
 
-.docx
+# System
+*.ini
+.DS_Store
+.log
+
+# Adobe
+*.pdf
+*.psd
+*.ai
+*.eps
+
+# MicrosoftOffice
+*.tmp
+*.docx
+*.xlsx
+*.pptx
+*.doc
+*.xls
+*.ppt
+
+# MicrosoftOffice temporary
+~$*.doc*
+~$*.ppt*
+~$*.xls*
+*.~vsd*
+
+# MicrosoftOffice Backup File
+*.doc*
+*.xlk
