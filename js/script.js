@@ -2,45 +2,57 @@ const most = document.getElementById("most");
 const top250 = document.getElementById("top250");
 const reviews = document.getElementById("reviews");
 
+const w185 = "https://image.tmdb.org/t/p/w185/"
+const w500 = "https://image.tmdb.org/t/p/w500/"
 
 
 //---------------------------------------------------
 
 
 
+
+
+
+
+
+
+
+//---------------------------------------------------
+
+
 async function vision(box) {
 
-  
-  
-  let id = await topId(mostUrl)
+
+  let id = await topId(trendList)
+
   console.log(id)
-  
-  let rand = random(box, 100)
 
+  let rand = random(box, 20)
 
-  
   console.log(rand[0])
   console.log(id[rand[0]])
-  
+
+
+
   let item = ""
 
   for (let i = 0; i < box; i++) {
-    
-    //let data = await imdbJson(`${fullTitleUrl}${id[rand[i]]}/Posters,Ratings,`)
-    let data = await imdbJson(fullTitleUrl)
+
+    let data = await apiJson(urlFixer(id[rand[i]]))
+    console.log(data)
 
     item += `<div class="col">
-                        <div class="card h-100">
-                            <a href="https://www.imdb.com/title/${data.id}/" target="_blank">
-                                <img src="${data.image}" class="card-img-top" alt="${data.title}">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title" alt="${data.imDbRating}">${star(data.imDbRating)}</h5>
-                                <h5 class="card-title">${data.fullTitle}</h5>
-                                <p class="card-text">${summerize(data.plotLocal,300)}</p>
-                            </div>
-                        </div>
-                    </div>`
+                <div class="card h-100">
+                    <a href="${data.homepage?data.homepage:"#"}" target="_blank">
+                        <img src="${w500+data.poster_path}" class="card-img-top" alt="${data.original_title}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title" alt="${data.vote_average}">${data.vote_average>0?star(data.vote_average):""}</h5>
+                        <h5 class="card-title">${data.title} (${data.release_date.substr(0,4)})</h5>
+                        <p class="card-text">${summerize(data.overview,300)}</p>
+                    </div>
+                </div>
+            </div>`
   }
 
   most.innerHTML = item
@@ -57,27 +69,29 @@ vision(3)
 async function offer(box) {
 
 
-  let response = await imdbJson(top250Url)
-  let data = response.items
+  let response = await apiJson(mostUrl)
 
-  console.log(data)
-  console.log(data[0]);
+  // console.log(response)
+  let data = response.results
+
+  // console.log(data)
+  // console.log(data[0]);
 
   let item = "";
-  let rand = random(box, 250)
+  // let rand = random(box, 250)
 
   for (let i = 0; i < box; i++) {
 
     item += `  <div class="col">
                   <div class="card h-100">
                   
-                      <a href="https://www.imdb.com/title/${data[rand[i]].id}/" target="_blank">
-                          <img src="${data[rand[i]].image}" class="card-img" alt="${data[rand[i]].fullTitle}">
+                      <a href="#" target="_blank">
+                          <img src="${w185+data[i].poster_path}" class="card-img" alt="${data[i].original_title}">
                       </a>
                       <div class="card-body text-center">
                           
-                          <h5 class="text-warning">${star(data[rand[i]].imDbRating)}</h5>
-                          <p class="card-title fs-6">${data[rand[i]].title}</p>
+                          <h5 class="text-warning">${star(data[i].vote_average)}</h5>
+                          <p class="card-title fs-6">${data[i].title}</p>
                       </div>
                   </div>
                 </div>`;
@@ -126,7 +140,7 @@ async function reviewFunc(val) {
 
 }
 
-reviewFunc(6)
+// reviewFunc(6)
 
 
 

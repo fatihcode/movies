@@ -1,10 +1,13 @@
-// const publicKey ="pk_qqnsponebxed9indw"
+const publicKey = "fa900fc690bf9cc2e346b75e332beb4a"
 
-// const mostUrl = "https://imdb-api.com/en/API/MostPopularMovies/k_5tc9m3cl";
+// const mostUrl = "https://api.themoviedb.org/3/movie/popular?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR&page=1";
+// const trendList = "https://api.themoviedb.org/3/trending/movie/day?api_key=fa900fc690bf9cc2e346b75e332beb4a"
 // const comingUrl = "https://imdb-api.com/en/API/ComingSoon/k_5tc9m3cl"
 // const top250Url="https://imdb-api.com/en/API/Top250Movies/k_5tc9m3cl"
 // const reviews = "https://imdb-api.com/en/API/Reviews/k_5tc9m3cl/tt1375666"
-// const fullTitleUrl ="https://imdb-api.com/tr/API/Title/k_5tc9m3cl/"
+const fullTitleUrl = "https://api.themoviedb.org/3/movie/"
+
+// 370172"
 
 // https://imdb-api.com/en/API/Title/k_5tc9m3cl/tt1375666/Posters,Ratings,
 
@@ -14,16 +17,27 @@
 
 
 const mostUrl = "./json/most.json"
-const comingUrl = "./json/comicSoon.json"
-const top250Url = "./json/top250.json"
-const reviewsUrl = "./json/reviews.json"
-const fullTitleUrl = "./json/fullTitle.json"
+const trendList = "./json/trendday.json"
+// const comingUrl = "./json/comicSoon.json"
+// const top250Url = "./json/top250.json"
+// const reviewsUrl = "./json/reviews.json"
+// const fullTitleUrl = "./json/fullTitle.json"
+
+
+//----------------------------------------------------
+
+function urlFixer(url) {
+
+    return fullTitleUrl + url + "?api_key=" + publicKey + "&language=tr-TR"
+
+
+}
 
 
 //---------------------------------------------------
 
 
-async function imdbJson(url) {
+async function apiJson(url) {
 
     try {
 
@@ -33,6 +47,8 @@ async function imdbJson(url) {
         if (json.ok) {
             let data = await json.json();
             // console.log(data);
+            // console.log(data.results[0]);
+
             return data
 
         }
@@ -41,32 +57,32 @@ async function imdbJson(url) {
     }
 }
 
-
+// apiJson()
 //---------------------------------------------------
 
 
 async function topId(url) {
 
-    let response = await imdbJson(url)
-    let data = response.items
+    let response = await apiJson(url)
+    let data = response.results
 
     // console.log(data)
-    // console.log(data.id)
+    // console.log(data[0].id)
 
-    let id250 = []
+    let trend = []
 
     data.forEach(item => {
 
-        id250.push(item.id)
+        trend.push(item.id)
 
     });
 
-    // console.log(id250)
+    // console.log(trend)
 
-    return id250
+    return trend
 }
 
-topId()
+// topId(trendList)
 
 
 //----------------------------------------------------
@@ -142,4 +158,4 @@ function star(str) {
 
 }
 
-document.querySelector("#str").innerHTML=star(8.4)
+document.querySelector("#str").innerHTML = star(8.4)
