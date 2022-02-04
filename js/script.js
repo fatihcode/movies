@@ -10,7 +10,7 @@ reviewFunc(6)
 async function slide(box) {
 
   let id = choice
-  let rand = random(box, 10)
+  let rand = random(box, 20)
   let item = ""
   let caro = ""
 
@@ -20,10 +20,11 @@ async function slide(box) {
 
     item += `<div class="carousel-item ${i==0?"active":""}">
                 <a href="${data.homepage?data.homepage:"#"}" target="_blank">
-                    <img src="${w1280+data.backdrop_path}" class="d-block w-100" title="${data.original_title}">
+                    <img src="${w1280+data.backdrop_path}" class="d-block w-100" title="${data.tagline}">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="shade">${data.title} (${data.release_date.substr(0,4)})</h3>
-                        <h6 class="shade">${data.tagline?data.tagline+" | ":""}${data.genres.map(item=>item.name).join(", ")} | ${Math.floor(data.runtime/60)+"h "+(data.runtime%60)+"m"}</h6>        
+                        <h6 class="shade">${data.genres.map(item=>item.name).join(", ")} | ${Math.floor(data.runtime/60)+"h "+(data.runtime%60)+"m"}</h6>
+
                     </div>
                 </a>
             </div>`
@@ -82,7 +83,6 @@ async function offer(box) {
                       <a href="#" target="_blank">
                           <img src="${face+data[i].poster_path}" class="card-img" title="${data[i].original_title}">
                       </a>
-                      
                   </div>
                 </div>`;
   }
@@ -97,23 +97,20 @@ async function artist(box) {
 
   let response = await apiJson(artistUrl)
   let data = response.results
-  console.log(data)
   let item = "";
-  // let rand = random(box, 250)
 
   for (let i = 0; i < box; i++) {
 
-    item += `  <div class="col">
-                  <div class="card">
-                      <a href="#"  class="text-muted text-decoration-none" target="_blank">
-                          <img src="${art+data[i].profile_path}" class="card-img gray" title="${data[i].name}">
-                          <div class="text-center p-2">
-                          <span class="fw-bold">${data[i].name}</span>
-                          </div>
-                      </a>
-                      
-                  </div>
-                </div>`;
+    item += `<div class="col">
+                <div class="card">
+                    <a href="#"  class="text-muted text-decoration-none" target="_blank">
+                        <img src="${art+data[i].profile_path}" class="card-img gray" title="${data[i].name}">
+                        <div class="text-center p-2">
+                            <span class="fw-bold">${data[i].name}</span>
+                        </div>
+                    </a>
+                </div>
+              </div>`;
   }
   person.innerHTML = item;
 }
