@@ -1,20 +1,45 @@
 const most = document.getElementById("most");
 const top250 = document.getElementById("top250");
 const reviews = document.getElementById("reviews");
+const slider = document.getElementById("slider");
+const crousel = document.getElementById("crousel")
 
-const w185 = "https://image.tmdb.org/t/p/w185/"
-const w500 = "https://image.tmdb.org/t/p/w500/"
+const w185 = "https://image.tmdb.org/t/p/w185"
+const w500 = "https://image.tmdb.org/t/p/w500"
+const w1280 = "https://image.tmdb.org/t/p/w1280"
 
 
 //---------------------------------------------------
 
 
+async function slide(box) {
 
+  let id = await topId(comingList)
+  let rand = random(box, 20)
+  let item = ""
+  let caro = ""
 
+  for (let i = 0; i < box; i++) {
 
+    let data = await apiJson(urlFixer(id[rand[i]]))
 
+    item += `<div class="carousel-item ${i==0?"active":""}">
+                <a href="${data.homepage?data.homepage:"#"}" target="_blank">
+                    <img src="${w1280+data.backdrop_path}" class="d-block w-100" alt="${data.original_title}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>${data.title} (${data.release_date.substr(0,4)})</h5>
+                        <p>${data.tagline?data.tagline+" | ":""}${data.genres.map(item=>item.name).join(", ")}</p>        
+                    </div>
+                </a>
+            </div>`
 
+    caro += `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i}" ${i==0?`class="active" aria-current="true"`:""} aria-label="Slide ${i}"></button>`
+  }
+  crousel.innerHTML = caro
+  slider.innerHTML = item + `<div style="position: absolute; z-index: 0; bottom: 0px; height: 120px;" class="bg-light w-100 bg-opacity-25 justify-content-center"></div>`
+}
 
+slide(10)
 
 
 //---------------------------------------------------
@@ -22,24 +47,13 @@ const w500 = "https://image.tmdb.org/t/p/w500/"
 
 async function vision(box) {
 
-
   let id = await topId(trendList)
-
-  console.log(id)
-
   let rand = random(box, 20)
-
-  console.log(rand[0])
-  console.log(id[rand[0]])
-
-
-
   let item = ""
 
   for (let i = 0; i < box; i++) {
 
     let data = await apiJson(urlFixer(id[rand[i]]))
-    console.log(data)
 
     item += `<div class="col">
                 <div class="card h-100">
@@ -49,14 +63,12 @@ async function vision(box) {
                     <div class="card-body">
                         <h5 class="card-title" alt="${data.vote_average}">${data.vote_average>0?star(data.vote_average):""}</h5>
                         <h5 class="card-title">${data.title} (${data.release_date.substr(0,4)})</h5>
-                        <p class="card-text">${summerize(data.overview,300)}</p>
+                        <p class="card-text">${summerize(data.overview,200)}</p>
                     </div>
                 </div>
             </div>`
   }
-
   most.innerHTML = item
-
 }
 
 vision(3)
@@ -65,18 +77,10 @@ vision(3)
 //---------------------------------------------------
 
 
-
 async function offer(box) {
 
-
   let response = await apiJson(mostUrl)
-
-  // console.log(response)
   let data = response.results
-
-  // console.log(data)
-  // console.log(data[0]);
-
   let item = "";
   // let rand = random(box, 250)
 
@@ -84,25 +88,20 @@ async function offer(box) {
 
     item += `  <div class="col">
                   <div class="card h-100">
-                  
                       <a href="#" target="_blank">
                           <img src="${w185+data[i].poster_path}" class="card-img" alt="${data[i].original_title}">
                       </a>
                       <div class="card-body text-center">
-                          
                           <h5 class="text-warning">${star(data[i].vote_average)}</h5>
                           <p class="card-title fs-6">${data[i].title}</p>
                       </div>
                   </div>
                 </div>`;
-
   }
-
   top250.innerHTML = item;
 }
 
 offer(12)
-
 
 
 //---------------------------------------------------
@@ -110,12 +109,8 @@ offer(12)
 
 async function reviewFunc(val) {
 
-  let response = await imdbJson(reviewsUrl)
+  let response = await apiJson(reviewsUrl)
   let data = await response.items
-
-  console.log(response.items)
-  console.log(data[0])
-
   let item = ""
   let rand = random(val, 25)
 
@@ -134,16 +129,10 @@ async function reviewFunc(val) {
                 </a>
              </div>`
   }
-
   reviews.innerHTML = item
-
-
 }
 
-// reviewFunc(6)
-
-
-
+reviewFunc(6)
 
 
 //---------------------------------------------------

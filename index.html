@@ -16,8 +16,6 @@
 <body>
 
 
-
-
     <header class="mb-3  border-bottom sticky-top bg-warning navbar">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center w-100 justify-content-lg-start">
@@ -77,7 +75,9 @@
 
 
         <div id="carouselExampleCaptions" class="carousel slide mb-4" data-bs-ride="carousel">
-            <div class="carousel-indicators">
+
+            <div id="crousel" class="carousel-indicators">
+
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
@@ -91,7 +91,8 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
                     aria-label="Slide 6"></button>
             </div>
-            <div class="carousel-inner justify-content-center">
+
+            <div id="slider" class="carousel-inner justify-content-center">
 
                 <div class="carousel-item active">
                     <a href="https://www.imdb.com/title/tt7991608/" target="_blank">
@@ -164,8 +165,8 @@
                     </a>
                 </div>
 
-                <!-- <div style="position: absolute; z-index: 0; bottom: 0px; height: 120px;"
-                    class="bg-light w-100 bg-opacity-25 justify-content-center"></div> -->
+                <div style="position: absolute; z-index: 0; bottom: 0px; height: 120px;"
+                    class="bg-light w-100 bg-opacity-25 justify-content-center"></div>
 
             </div>
 
@@ -180,6 +181,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+
         </div>
 
 
@@ -243,13 +245,11 @@
 
 
 
-
         <!------------------------------- TOP250 ------------------------------->
 
 
 
-
-        <section class="container border-bottom display-4 mb-3">Top 250 Öneriler</section>
+        <section class="container border-bottom display-4 mb-3">Trendler</section>
 
         <div id="top250" class="row row-cols-2 row-cols-lg-6 row-cols-md-4 row-cols-sm-3 mb-4 g-4">
 
@@ -258,11 +258,6 @@
                     <a href="#">
                         <img src="img/57AIZGL3flQk4pGf0Ih5MKNcEC7.jpg" class="card-img" alt="...">
                     </a>
-                    <div class="card-body">
-                        <p id="str"  class="text-warning">
-                        <!-- <p class="card-title"></p> -->
-                        </p>
-                    </div>
                 </div>
             </div>
             <div class="col">
@@ -360,8 +355,6 @@
         </div>
 
 
-
-
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
                 <li class="page-item"><a class="page-link" href="#" aria-label="Previous">
@@ -383,16 +376,13 @@
 
 
 
-
         <!------------------------------- REVIEWS ------------------------------->
-
 
 
 
         <section class="container border-bottom display-4 mb-3">Yorumlar</section>
 
         <div id="reviews" class="row row-cols-1 row-cols-md-2 mb-3">
-
 
             <div class="col">
                 <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
@@ -482,7 +472,6 @@
                 </a>
             </div>
 
-
         </div>
 
     </div>
@@ -490,9 +479,6 @@
 
 
     <!------------------------------- FOOTER ------------------------------->
-
-
-
 
 
 
@@ -620,8 +606,6 @@
     </div>
 
 
-
-
     <script src="./js/func.js"></script>
     <script src="./js/script.js"></script>
 
@@ -631,6 +615,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
