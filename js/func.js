@@ -1,9 +1,3 @@
-const urlFixer = (id) => titleUrl + id + "?api_key=" + key + "&language=tr-TR"
-const urlReview = (id) => titleUrl + id + "/reviews?api_key=" + key
-
-//---------------------------------------------------
-
-
 async function apiJson(url) {
 
     try {
@@ -13,28 +7,26 @@ async function apiJson(url) {
             let data = await json.json();
             return data
         }
-
     } catch (error) {
         console.log(error);
     }
 }
 
-
 //---------------------------------------------------
-
 
 async function idFunc(url) {
 
-    let response = await apiJson(url)
-    let data = response.results
     let trend = []
-    data.forEach(item => trend.push(item.id));
+    for (let i = 1; i < 3; i++) {
+
+        let response = await apiJson(url + `&page=${i}`)
+        let data = response.results
+        data.forEach(item => trend.push(item.id));
+    }
     return trend
 }
 
-
 //----------------------------------------------------
-
 
 function random(val, max) {
 
@@ -53,9 +45,7 @@ function random(val, max) {
     return arr
 }
 
-
 //----------------------------------------------------
-
 
 function summerize(val, max) {
     let ozet = []
@@ -77,9 +67,7 @@ function summerize(val, max) {
     }
 }
 
-
 //----------------------------------------------------
-
 
 function star(str) {
 

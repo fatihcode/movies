@@ -1,22 +1,13 @@
-slide(10)
-vision(3)
-offer(12)
-artist(8)
-reviewFunc(6)
-
-//---------------------------------------------------
-
-
 async function slide(box) {
 
   let id = choice
-  let rand = random(box, 20)
+  let rand = random(box, 25)
   let item = ""
-  let caro = ""
+  let slide = ""
 
   for (let i = 0; i < box; i++) {
 
-    let data = await apiJson(urlFixer(id[rand[i]]))
+    let data = await apiJson(urlMovie(id[rand[i]]))
 
     item += `<div class="carousel-item ${i==0?"active":""}">
                 <a href="${data.homepage?data.homepage:"#"}" target="_blank">
@@ -28,25 +19,23 @@ async function slide(box) {
                 </a>
             </div>`
 
-    caro += `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i}" ${i==0?`class="active" aria-current="true"`:""} aria-label="Slide ${i}"></button>`
+    slide += `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i}" ${i==0?`class="active" aria-current="true"`:""} aria-label="Slide ${i}"></button>`
   }
-  crousel.innerHTML = caro
+  crousel.innerHTML = slide
   slider.innerHTML = item + `<div style="position: absolute; z-index: 0; bottom: 0px; height: 125px;" class="bg-light w-100 bg-opacity-25 justify-content-center"></div>`
 }
 
-
 //---------------------------------------------------
-
 
 async function vision(box) {
 
-  let id = await idFunc(trendList)
-  let rand = random(box, 20)
+  let id = await idFunc(urlTrend())
+  let rand = random(box, 40)
   let item = ""
 
   for (let i = 0; i < box; i++) {
 
-    let data = await apiJson(urlFixer(id[rand[i]]))
+    let data = await apiJson(urlMovie(id[rand[i]]))
 
     item += `<div class="col">
                 <div class="card h-100">
@@ -64,27 +53,25 @@ async function vision(box) {
   most.innerHTML = item
 }
 
-
 //---------------------------------------------------
-
 
 async function offer(box) {
 
-  let response = await apiJson(mostUrl)
+  let response = await apiJson(urlPopular())
   let data = response.results
   let item = "";
-  // let rand = random(box, 250)
+  let rand = random(box, 20)
 
   for (let i = 0; i < box; i++) {
 
     item += `  <div class="col">
                   <div class="card h-100">
-                      <a href="${tmdb+"movie/"+data[i].id}" target="_blank">
-                          <img src="${face+data[i].poster_path}" class="card-img" title="${data[i].original_title}">
+                      <a href="${tmdb+"movie/"+data[rand[i]].id}" target="_blank">
+                          <img src="${face+data[rand[i]].poster_path}" class="card-img" title="${data[rand[i]].original_title}">
                       </a>
                       <div class="card-body">
-                          <h6 class="card-title text-warning" alt="${data[i].vote_average}">${data[i].vote_average>0?star(data[i].vote_average):""}</h6>
-                          <h6 class="card-title">${data[i].title} (${data[i].release_date.substr(0,4)})</h6>
+                          <h6 class="card-title text-warning" alt="${data[rand[i]].vote_average}">${data[rand[i]].vote_average>0?star(data[rand[i]].vote_average):""}</h6>
+                          <h6 class="card-title">${data[rand[i]].title} (${data[rand[i]].release_date.substr(0,4)})</h6>
                       </div>
                   </div>
                 </div>`;
@@ -92,13 +79,11 @@ async function offer(box) {
   top250.innerHTML = item;
 }
 
-
 //---------------------------------------------------
-
 
 async function artist(box) {
 
-  let response = await apiJson(artistUrl)
+  let response = await apiJson(urlArtist())
   let data = response.results
   let item = "";
 
@@ -118,20 +103,18 @@ async function artist(box) {
   person.innerHTML = item;
 }
 
-
 //---------------------------------------------------
 
-
-async function reviewFunc(val) {
+async function reviewFunc(box) {
 
   let response = await apiJson(urlReview(278))
   let data = await response.results
   let item = ""
   let img = ""
 
-  data.length < val ? val = data.length : ""
+  data.length < box ? box = data.length : ""
 
-  for (let i = 0; i < val; i++) {
+  for (let i = 0; i < box; i++) {
 
     if (data[i].author_details.avatar_path != null) {
 
@@ -162,8 +145,10 @@ async function reviewFunc(val) {
   reviews.innerHTML = item
 }
 
-{
-  /* <small class="opacity-50 text-nowrap">${data[i].created_at}</small> */
-}
-
 //---------------------------------------------------
+
+slide(10)
+vision(3)
+offer(12)
+artist(8)
+reviewFunc(6)
