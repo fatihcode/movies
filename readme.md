@@ -1,5 +1,5 @@
 # Bootstrap Movies API Project
 
-live: [https://fatihqaz.github.io/movies/]()
+live: [fatihqaz.github.io/movies/](https://fatihqaz.github.io/movies/)
 
-API: [https://developers.themoviedb.org/]()
+API: [developers.themoviedb.org/](https://developers.themoviedb.org/)
