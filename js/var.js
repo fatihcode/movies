@@ -14,6 +14,7 @@ const trendList = "https://api.themoviedb.org/3/trending/movie/day?api_key=fa900
 const comingList = "https://api.themoviedb.org/3/movie/upcoming?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR"
 const artistUrl = "https://api.themoviedb.org/3/person/popular?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR"
 const titleUrl = "https://api.themoviedb.org/3/movie/"
+const tmdb ="https://www.themoviedb.org/"
 
 //---------------------------------------------------
 

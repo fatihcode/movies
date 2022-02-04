@@ -79,7 +79,7 @@ async function offer(box) {
 
     item += `  <div class="col">
                   <div class="card h-100">
-                      <a href="#" target="_blank">
+                      <a href="${tmdb+"movie/"+data[i].id}" target="_blank">
                           <img src="${face+data[i].poster_path}" class="card-img" title="${data[i].original_title}">
                       </a>
                       <div class="card-body">
@@ -106,14 +106,14 @@ async function artist(box) {
 
     item += `<div class="d-flex m-2">
                 <div class="card">
-                    <a href="#" class="text-muted text-decoration-none" target="_blank">
+                    <a href="${tmdb+"person/"+data[i].id}" class="text-muted text-decoration-none" target="_blank">
                         <img src="${art+data[i].profile_path}" class="card-img gray" title="${data[i].name}">
                         <div class="text-center p-2">
                             <span class="fw-bold">${data[i].name}</span>
                         </div>
                     </a>
                 </div>
-              </div>`;
+             </div>`;
   }
   person.innerHTML = item;
 }
@@ -124,7 +124,7 @@ async function artist(box) {
 
 async function reviewFunc(val) {
 
-  let response = await apiJson(urlReview(634649))
+  let response = await apiJson(urlReview(278))
   let data = await response.results
   let item = ""
   let img = ""
