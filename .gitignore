@@ -31,3 +31,5 @@
 # MicrosoftOffice Backup File
 *.doc*
 *.xlk
+
+/json

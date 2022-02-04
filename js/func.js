@@ -1,9 +1,11 @@
 const key = "fa900fc690bf9cc2e346b75e332beb4a"
+const choice = ["512195","524434","634649","644495","597208","337404","370172","438631","550988","451048","588228"]
 const mostUrl = "https://api.themoviedb.org/3/movie/popular?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR&page=1";
 const trendList = "https://api.themoviedb.org/3/trending/movie/day?api_key=fa900fc690bf9cc2e346b75e332beb4a"
 const comingList = "https://api.themoviedb.org/3/movie/upcoming?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR&page=1"
-const reviewsUrl = "https://imdb-api.com/en/API/Reviews/k_5tc9m3cl/tt1375666"
+// const reviewsUrl = "https://api.themoviedb.org/3/movie/370172/reviews?api_key=fa900fc690bf9cc2e346b75e332beb4a"
 const titleUrl = "https://api.themoviedb.org/3/movie/"
+const artistUrl = "https://api.themoviedb.org/3/person/popular?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR&page=1"
 
 
 //---------------------------------------------------
@@ -21,8 +23,11 @@ const titleUrl = "https://api.themoviedb.org/3/movie/"
 //----------------------------------------------------
 
 
-function urlFixer(url) {
-    return titleUrl + url + "?api_key=" + key + "&language=tr-TR"
+function urlFixer(id) {
+    return titleUrl + id + "?api_key=" + key + "&language=tr-TR"
+}
+function urlReview(id) {
+    return titleUrl + id + "/reviews?api_key=" + key
 }
 
 
@@ -48,7 +53,7 @@ async function apiJson(url) {
     }
 }
 
-// apiJson()
+
 //---------------------------------------------------
 
 
