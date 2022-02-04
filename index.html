@@ -6,8 +6,7 @@
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 
@@ -22,6 +21,9 @@
             transition: all 0.3s ease;
         }
 
+        .shade {
+            text-shadow: 1px 1px #000;
+        }
     </style>
 
     <title>Movie Project</title>
@@ -34,15 +36,14 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center w-100 justify-content-lg-start">
 
-                <a href="#" class="d-flex align-items-center mb-2 px-3 mb-lg-0  text-decoration-none">
+                <a href="#" onclick="location.reload(true);" class="d-flex align-items-center mb-2 px-3 mb-lg-0 text-decoration-none">
                     <img src="img/logo.png" height="45px" alt="">
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle link-dark" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Filmler</a>
+                        <a class="nav-link dropdown-toggle link-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Filmler</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Popüler</a></li>
                             <li><a class="dropdown-item" href="#">Gösterimdekiler</a></li>
@@ -51,8 +52,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle px-2 link-dark" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Diziler</a>
+                        <a class="nav-link dropdown-toggle px-2 link-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Diziler</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Popüler</a></li>
                             <li><a class="dropdown-item" href="#">Gösterimdekiler</a></li>
@@ -63,17 +63,14 @@
                     <li><a href="#" class="nav-link px-2 link-dark">Keşfet</a></li>
                 </ul>
 
-
-
                 <form class="col-12 col-lg-4 mb-3 w-50-l mb-lg-0 me-lg-3">
                     <div class="input-group">
-                        <input type="search" class="form-control btn-outline-light"
-                            placeholder="Bir film ya da sanatçı arayın..." aria-label="Search">
-                        <button class="btn btn-outline-light" type="button" id="button-addon2"><i
-                                class="bi bi-search"></i></button>
+                        <input type="search" class="form-control btn-outline-light" placeholder="Bir film ya da sanatçı arayın..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="button" id="button-addon2">
+                            <i class="bi bi-search"></i>
+                        </button>
                     </div>
                 </form>
-
 
             </div>
         </div>
@@ -83,32 +80,21 @@
     <div class="container">
 
 
-
         <!------------------------------- SLIDER ------------------------------->
-
 
 
         <div id="carouselExampleCaptions" class="carousel slide mb-4" data-bs-ride="carousel">
 
-            <div id="crousel" class="carousel-indicators">
+            <div id="crousel" class="carousel-indicators"></div>
 
- 
-            </div>
+            <div id="slider" class="carousel-inner justify-content-center"></div>
 
-            <div id="slider" class="carousel-inner justify-content-center">
-
-              
-
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
 
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -116,288 +102,71 @@
         </div>
 
 
-
-        <!------------------------------- MOSTPOPULAR ------------------------------->
-
+        <!------------------------------- TRENDLER ------------------------------->
 
 
-        <section class="container display-4 border-bottom mb-3">Most Popular</section>
+        <section class="container display-4 border-bottom mb-3">Trendler</section>
 
-        <div id="most" class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-
-           
-
-
-        </div>
-
+        <div id="most" class="row row-cols-1 row-cols-md-3 g-4 mb-4"></div>
 
 
         <!------------------------------- TOP250 ------------------------------->
 
 
-
         <section class="container border-bottom display-4 mb-3">Öne Çıkanlar</section>
 
-        <div id="top250" class="row row-cols-2 row-cols-lg-6 row-cols-md-4 row-cols-sm-3 mb-4 g-4">
-
-            
-        </div>
-
+        <div id="top250" class="row row-cols-2 row-cols-lg-6 row-cols-md-4 row-cols-sm-3 mb-4 g-4"></div>
 
 
         <!------------------------------- ARTIST ------------------------------->
 
 
-
         <section class="container border-bottom display-4 mb-3">Oyuncular</section>
 
-        <div id="person" class="row row-cols-2 row-cols-lg-6 row-cols-md-4 row-cols-sm-3 mb-4 g-4">
-
-           
-        </div>
+        <div id="person" class="row row-cols-2 row-cols-lg-6 row-cols-md-4 row-cols-sm-3 mb-4 g-4"></div>
 
 
         <!------------------------------- REVIEWS ------------------------------->
 
 
-
         <section class="container border-bottom display-4 mb-3">Yorumlar</section>
 
-        <div id="reviews" class="row row-cols-1 row-cols-md-2 mb-3">
+        <div id="reviews" class="row row-cols-1 row-cols-md-2 mb-3"></div>
 
-            <div class="col my-2">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                    <img src="img/pic1.png" height="32px" alt="">
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h6 class="mb-0">Taşıyıcı: Son Hız</h6>
-                            <p class="mb-0 opacity-75 ">Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum
-                                dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                        <small class="opacity-50 text-nowrap">now</small>
-                    </div>
-                </a>
-            </div>
 
-            <div class="col my-2">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                    <img src="img/pic2.png" height="32px" alt="">
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h6 class="mb-0">Sensiz Olmaz</h6>
-                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                                earum mollitia nisi? Lorem, ipsum dolor.</p>
-                        </div>
-                        <small class="opacity-50 text-nowrap">3d</small>
-                    </div>
-                </a>
-            </div>
+        <!------------------------------- FOOTER ------------------------------->
 
-            <div class="col my-2">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                    <img src="img/pic0.png" height="32px" alt="">
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h6 class="mb-0">Koruyucu</h6>
-                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-                                fuga omnis inventore? Quam perferendis sint quo odio.</p>
-                        </div>
-                        <small class="opacity-50 text-nowrap">1w</small>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col my-2">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                    <img src="img/pic4.png" height="32px" alt="">
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h6 class="mb-0">Yukarıdaki Tehlike 3</h6>
-                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur elit. Tempora saepe ullam
-                                delectus aliquid modi. Perspiciatis, molestiae.
-
-                            </p>
-                        </div>
-                        <small class="opacity-50 text-nowrap">now</small>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col my-2">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                    <img src="img/pic5.png" height="32px" alt="">
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h6 class="mb-0">Kaçış Planı</h6>
-                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                                nam suscipit tenetur laboriosam.</p>
-                        </div>
-                        <small class="opacity-50 text-nowrap">3d</small>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col my-2">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                    <img src="img/pic6.png" height="32px" alt="">
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h6 class="mb-0">Patron Seviyesi</h6>
-                            <p class="mb-0 opacity-75">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Praesentium quos voluptate voluptatum officiis saepe.
-
-                            </p>
-                        </div>
-                        <small class="opacity-50 text-nowrap">1w</small>
-                    </div>
-                </a>
-            </div>
-
-        </div>
 
     </div>
 
 
+    <footer class="border-top bg-warning">
 
-    <!------------------------------- FOOTER ------------------------------->
-
-
-
-    <footer class="py-3 border-top bg-light ">
-        <div class="container justify-content-center">
-
-            <div class="row">
-
-                <div class="col-5">
-                    <form class="row g-3">
-                        <div class="">
-                            <label for="exampleFormControlInput1" class="form-label">Email adresiniz</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com">
-                        </div>
-
-
-                        <div class="">
-                            <label for="exampleFormControlTextarea1" class="form-label">Görüşleriniz</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                        </div>
-
-                        <div class="">
-                            <label for="exampleFormControlTextarea1" class="form-label pe-2">Puan</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
-                                <label class="form-check-label" for="inlineRadio1">1</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                    value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                                    value="option3">
-                                <label class="form-check-label" for="inlineRadio3">3</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
-                                    value="option4">
-                                <label class="form-check-label" for="inlineRadio4">4</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
-                                    value="option5">
-                                <label class="form-check-label" for="inlineRadio5">5</label>
-                            </div>
-                        </div>
-
-                        <div class="col-auto">
-                            <button type="submit" class="btn btn-primary mb-3">Gönder</button>
-                        </div>
-                        <div class="col-auto">
-                            <button type="reset" class="btn btn-light mb-3">Temizle</button>
-                        </div>
-                    </form>
-
-                </div>
-
-                <div class="col-1"></div>
-
-                <div class="col-2">
-                    <h5>Destek</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sık Sorulan Sorular</a>
-                        </li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bize Ulaşın</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Destek Forumları</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Kullanım Koşulları</a>
-                        </li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Kurumsal Bilgiler</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-2">
-                    <h5>Topluluk</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Rehberler</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Tartışmalar</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Öne Çıkanlar</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Haberler</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Tartışmalar</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-2">
-                    <h5>Hakkımızda</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Destek</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">İletişim</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Yardım</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sözleşme</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-    <div class="border-top bg-warning">
         <div class="container d-flex justify-content-between pt-2 pb-3">
-
-            <p>© 2022 Company, Inc. All rights reserved.</p>
+            <p class="d-none d-md-block">© 2022 Company, Inc. All rights reserved.</p>
             <a href="#">
                 <img src="img/logo.png" height="25px" alt="">
             </a>
             <ul class="list-unstyled d-flex align-items-start" style="margin-top: -5px;">
                 <li class="ms-3">
-                    <a class="link-dark" href="#">
-                        <i class="bi-twitter" style="font-size: 1.5rem;"></i></a>
+                    <a class="link-dark" href="#"><i class="bi-twitter" style="font-size: 1.5rem;"></i></a>
                 </li>
                 <li class="ms-3">
-                    <a class="link-dark" href="#">
-                        <i class="bi-instagram" style="font-size: 1.5rem;"></i>
-                    </a>
+                    <a class="link-dark" href="#"><i class="bi-instagram" style="font-size: 1.5rem;"></i></a>
                 </li>
                 <li class="ms-3">
-                    <a class="link-dark" href="#">
-                        <i class="bi-facebook" style="font-size: 1.5rem;"></i>
-                    </a>
+                    <a class="link-dark" href="#"><i class="bi-facebook" style="font-size: 1.5rem;"></i></a>
                 </li>
             </ul>
         </div>
-    </div>
 
+    </footer>
 
+    <script src="./js/var.js"></script>
     <script src="./js/func.js"></script>
     <script src="./js/script.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
 </body>
 

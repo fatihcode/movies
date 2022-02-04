@@ -1,35 +1,5 @@
-const key = "fa900fc690bf9cc2e346b75e332beb4a"
-const choice = ["512195","524434","634649","644495","597208","337404","370172","438631","550988","451048","588228"]
-const mostUrl = "https://api.themoviedb.org/3/movie/popular?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR&page=1";
-const trendList = "https://api.themoviedb.org/3/trending/movie/day?api_key=fa900fc690bf9cc2e346b75e332beb4a"
-const comingList = "https://api.themoviedb.org/3/movie/upcoming?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR&page=1"
-// const reviewsUrl = "https://api.themoviedb.org/3/movie/370172/reviews?api_key=fa900fc690bf9cc2e346b75e332beb4a"
-const titleUrl = "https://api.themoviedb.org/3/movie/"
-const artistUrl = "https://api.themoviedb.org/3/person/popular?api_key=fa900fc690bf9cc2e346b75e332beb4a&language=tr-TR&page=1"
-
-
-//---------------------------------------------------
-
-
-// const mostUrl = "./json/most.json"
-// const trendList = "./json/trendday.json"
-// const upcomingList = "./json/upcoming.json"
-// const comingUrl = "./json/comicSoon.json"
-// const top250Url = "./json/top250.json"
-// const reviewsUrl = "./json/reviews.json"
-// const fullTitleUrl = "./json/fullTitle.json"
-
-
-//----------------------------------------------------
-
-
-function urlFixer(id) {
-    return titleUrl + id + "?api_key=" + key + "&language=tr-TR"
-}
-function urlReview(id) {
-    return titleUrl + id + "/reviews?api_key=" + key
-}
-
+const urlFixer = (id) => titleUrl + id + "?api_key=" + key + "&language=tr-TR"
+const urlReview = (id) => titleUrl + id + "/reviews?api_key=" + key
 
 //---------------------------------------------------
 
@@ -37,17 +7,13 @@ function urlReview(id) {
 async function apiJson(url) {
 
     try {
-
         let json = await fetch(url);
-        // console.log(json);
 
         if (json.ok) {
             let data = await json.json();
-            // console.log(data);
-            // console.log(data.results[0]);
-
             return data
         }
+
     } catch (error) {
         console.log(error);
     }
@@ -57,7 +23,7 @@ async function apiJson(url) {
 //---------------------------------------------------
 
 
-async function topId(url) {
+async function idFunc(url) {
 
     let response = await apiJson(url)
     let data = response.results
