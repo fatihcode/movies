@@ -1,7 +1,7 @@
 slide(10)
 vision(3)
 offer(12)
-artist(12)
+artist(8)
 reviewFunc(6)
 
 //---------------------------------------------------
@@ -24,7 +24,6 @@ async function slide(box) {
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="shade">${data.title} (${data.release_date.substr(0,4)})</h3>
                         <h6 class="shade">${data.genres.map(item=>item.name).join(", ")} | ${Math.floor(data.runtime/60)+"h "+(data.runtime%60)+"m"}</h6>
-
                     </div>
                 </a>
             </div>`
@@ -79,10 +78,14 @@ async function offer(box) {
   for (let i = 0; i < box; i++) {
 
     item += `  <div class="col">
-                  <div class="card">
+                  <div class="card h-100">
                       <a href="#" target="_blank">
                           <img src="${face+data[i].poster_path}" class="card-img" title="${data[i].original_title}">
                       </a>
+                      <div class="card-body">
+                          <h6 class="card-title text-warning" alt="${data[i].vote_average}">${data[i].vote_average>0?star(data[i].vote_average):""}</h6>
+                          <h6 class="card-title">${data[i].title} (${data[i].release_date.substr(0,4)})</h6>
+                      </div>
                   </div>
                 </div>`;
   }
@@ -101,9 +104,9 @@ async function artist(box) {
 
   for (let i = 0; i < box; i++) {
 
-    item += `<div class="col">
+    item += `<div class="d-flex m-2">
                 <div class="card">
-                    <a href="#"  class="text-muted text-decoration-none" target="_blank">
+                    <a href="#" class="text-muted text-decoration-none" target="_blank">
                         <img src="${art+data[i].profile_path}" class="card-img gray" title="${data[i].name}">
                         <div class="text-center p-2">
                             <span class="fw-bold">${data[i].name}</span>
@@ -145,7 +148,7 @@ async function reviewFunc(val) {
 
     item += `<div class="col my-2">
                 <a href="${data[i].url?data[i].url:"#"}" class="list-group-item list-group-item-action h-100 d-flex gap-3 py-3" aria-current="true" target="_blank">
-                    <img src="${img}" class="rounded-circle" height="32px" alt="">
+                    <img src="${img}" class="rounded-circle" height="40px" alt="">
                     <div class="d-flex gap-2 w-100 justify-content-between">
                         <div>
                             <h6 class="mb-0">${data[i].author} <small class="opacity-50 text-nowrap">${data[i].created_at.substr(11,8)}</small></h6>
