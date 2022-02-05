@@ -22,7 +22,7 @@ async function slide(box) {
     slide += `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i}" ${i==0?`class="active" aria-current="true"`:""} aria-label="Slide ${i}"></button>`
   }
   crousel.innerHTML = slide
-  slider.innerHTML = item + `<div style="position: absolute; z-index: 0; bottom: 0px; height: 125px;" class="d-none d-md-block bg-light w-100 bg-opacity-25 justify-content-center"></div>`
+  slider.innerHTML = item + `<div class="d-none d-md-block position-absolute bottom-0 bg-light w-100 bg-opacity-25" style="height: 125px;"></div>`
 }
 
 //---------------------------------------------------
