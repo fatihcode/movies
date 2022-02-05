@@ -31,11 +31,13 @@ async function vision(box) {
 
   let id = await idFunc(urlTrend())
   let item = ""
+  let m = 0
 
   for (let i = 0; i < box; i++) {
 
-    let rand = random(box, 40)
-    let data = await apiJson(urlMovie(id[rand[i]]))
+    let rand = random(40, 40)
+    let data = await apiJson(urlMovie(id[rand[m]]))
+    m++
 
     if (data.overview !== "") {
 
