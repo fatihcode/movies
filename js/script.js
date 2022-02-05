@@ -30,25 +30,31 @@ async function slide(box) {
 async function vision(box) {
 
   let id = await idFunc(urlTrend())
-  let rand = random(box, 40)
   let item = ""
 
   for (let i = 0; i < box; i++) {
 
+    let rand = random(box, 40)
     let data = await apiJson(urlMovie(id[rand[i]]))
 
-    item += `<div class="col">
-                <div class="card h-100">
-                    <a href="${data.homepage?data.homepage:"#"}" target="_blank">
-                        <img src="${best+data.poster_path}" class="card-img-top h-100" title="${data.original_title}" style="object-fit: cover;">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title text-warning" alt="${data.vote_average}">${data.vote_average>0?star(data.vote_average):""}</h5>
-                        <h5 class="card-title">${data.title} (${data.release_date.substr(0,4)})</h5>
-                        <p class="card-text">${summerize(data.overview,200)}</p>
-                    </div>
-                </div>
-            </div>`
+    if (data.overview !== "") {
+
+      item += `<div class="col">
+                  <div class="card h-100">
+                      <a href="${data.homepage?data.homepage:"#"}" target="_blank">
+                          <img src="${best+data.poster_path}" class="card-img-top h-100" title="${data.original_title}" style="object-fit: cover;">
+                      </a>
+                      <div class="card-body">
+                          <h5 class="card-title text-warning" alt="${data.vote_average}">${data.vote_average>0?star(data.vote_average):""}</h5>
+                          <h5 class="card-title">${data.title} (${data.release_date.substr(0,4)})</h5>
+                          <p class="card-text">${summerize(data.overview,200)}</p>
+                      </div>
+                  </div>
+              </div>`
+
+    } else {
+      i--
+    }
   }
   most.innerHTML = item
 }

@@ -53,6 +53,7 @@ function summerize(val, max) {
 
     if (val.length <= max) {
         return val
+        
     } else {
         let arr = val.split(" ")
 
