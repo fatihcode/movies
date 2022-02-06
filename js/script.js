@@ -98,7 +98,7 @@ async function artistFunc(box) {
   for (let i = 0; i < box; i++) {
 
     item += `<div class="d-flex m-2">
-                <div class="card">
+                <div class="card c140">
                     <a href="${tmdb+"person/"+data[i].id}" class="text-muted text-decoration-none" target="_blank">
                         <img src="${art+data[i].profile_path}" class="card-img gray" title="${data[i].name}">
                         <div class="text-center p-2">
