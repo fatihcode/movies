@@ -1,4 +1,4 @@
-async function slide(box) {
+async function sliderFunc(box) {
 
   let id = choice
   let rand = random(box, 25)
@@ -11,7 +11,7 @@ async function slide(box) {
 
     item += `<div class="carousel-item ${i==0?"active":""}">
                 <a href="${data.homepage?data.homepage:"#"}" target="_blank">
-                    <img src="${w1280+data.backdrop_path}" class="d-block w-100" title="${data.tagline}">
+                    <img src="${image+"w1280"+data.backdrop_path}" class="d-block w-100" title="${data.tagline}">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="shade">${data.title} (${data.release_date.substr(0,4)})</h3>
                         <h6 class="shade">${data.genres.map(item=>item.name).join(", ")} | ${Math.floor(data.runtime/60)+"h "+(data.runtime%60)+"m"}</h6>
@@ -27,7 +27,7 @@ async function slide(box) {
 
 //---------------------------------------------------
 
-async function vision(box) {
+async function trendFunc(box) {
 
   let id = await idFunc(urlTrend())
   let item = ""
@@ -58,12 +58,12 @@ async function vision(box) {
       i--
     }
   }
-  most.innerHTML = item
+  trend.innerHTML = item
 }
 
 //---------------------------------------------------
 
-async function offer(box) {
+async function featuredFunc(box) {
 
   let response = await apiJson(urlPopular())
   let data = response.results
@@ -84,12 +84,12 @@ async function offer(box) {
                   </div>
                 </div>`;
   }
-  top250.innerHTML = item;
+  featured.innerHTML = item;
 }
 
 //---------------------------------------------------
 
-async function artist(box) {
+async function artistFunc(box) {
 
   let response = await apiJson(urlArtist())
   let data = response.results
@@ -108,7 +108,7 @@ async function artist(box) {
                 </div>
              </div>`;
   }
-  person.innerHTML = item;
+  artist.innerHTML = item;
 }
 
 //---------------------------------------------------
@@ -129,7 +129,7 @@ async function reviewFunc(box) {
       if (data[i].author_details.avatar_path.substr(1, 4) == "http") {
         img = data[i].author_details.avatar_path.substr(1)
       } else {
-        img = w185 + data[i].author_details.avatar_path
+        img = image + "w185" + data[i].author_details.avatar_path
       }
 
     } else {
@@ -155,8 +155,8 @@ async function reviewFunc(box) {
 
 //---------------------------------------------------
 
-slide(10)
-vision(3)
-offer(12)
-artist(8)
+sliderFunc(10)
+trendFunc(3)
+featuredFunc(12)
+artistFunc(8)
 reviewFunc(6)
